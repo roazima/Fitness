@@ -1,0 +1,33 @@
+fitness-tracker-app/
+│
+├── backend/                    # FastAPI backend
+│   ├── app/
+│   │   ├── main.py             # FastAPI app entry
+│   │   ├── routes.py           # Endpoints
+│   │   ├── models.py           # Pydantic models
+│   │   ├── mock_openai.py      # Simulated macro parser
+│   │   └── kafka_producer.py   # Sends logs to Kafka
+│   └── Dockerfile
+│
+├── frontend/                   # React app
+│   ├── public/
+│   ├── src/
+│   │   ├── App.jsx             # Food input form
+│   │   ├── api.js              # Sends food to FastAPI
+│   │   └── components/
+│   └── Dockerfile
+│
+├── kafka/
+│   ├── docker-compose.yml      # Kafka + Zookeeper + PostgreSQL
+│   ├── consumer/               # Kafka consumer + PySpark
+│   │   ├── spark_job.py
+│   │   ├── airflow_dag.py      # next phase
+│   │   └── requirements.txt
+│
+├── data/                       # Exported Apple Health data or food logs
+│   └── export.xml
+│
+├── .env                        # Secrets, DB URLs
+├── docker-compose.yml          # Overall stack
+├── README.md
+└── requirements.txt
