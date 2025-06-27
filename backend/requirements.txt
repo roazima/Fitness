@@ -2,3 +2,4 @@ fastapi
 uvicorn
 pydantic
 kafka-python
+psycopg2-binary
